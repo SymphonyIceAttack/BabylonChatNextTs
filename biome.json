@@ -30,7 +30,7 @@
 		"actions": {
 			"source": {
 				"organizeImports": {
-					"level": "on",
+					"level": "off",
 					"options": {
 						"groups": ["@/components/ai-elements"]
 					}
