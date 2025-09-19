@@ -27,17 +27,19 @@ import {
 	XIcon,
 } from "lucide-react";
 import { nanoid } from "nanoid";
+import type {
+	ChangeEventHandler,
+	ComponentProps,
+	FormEvent,
+	FormEventHandler,
+	HTMLAttributes,
+	KeyboardEventHandler,
+	RefObject,
+} from "react";
 import {
-	type ChangeEventHandler,
 	Children,
-	type ComponentProps,
 	createContext,
-	type FormEvent,
-	type FormEventHandler,
 	Fragment,
-	type HTMLAttributes,
-	type KeyboardEventHandler,
-	type RefObject,
 	useCallback,
 	useContext,
 	useEffect,

@@ -13,7 +13,8 @@ import {
 	ExternalLinkIcon,
 	MessageCircleIcon,
 } from "lucide-react";
-import { type ComponentProps, createContext, useContext } from "react";
+import type { ComponentProps, } from "react";
+import { createContext, useContext } from "react";
 
 const providers = {
 	github: {

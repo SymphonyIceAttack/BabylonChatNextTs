@@ -8,11 +8,13 @@ import {
 	CollapsibleTrigger,
 } from "@/components/ui/collapsible";
 import { cn } from "@/lib/utils";
+import type {
+	LucideIcon,
+} from "lucide-react";
 import {
 	BrainIcon,
 	ChevronDownIcon,
 	DotIcon,
-	type LucideIcon,
 } from "lucide-react";
 import type { ComponentProps } from "react";
 import { createContext, memo, useContext } from "react";

@@ -17,6 +17,15 @@
 		"rules": {
 			"a11y": {
 				"useSemanticElements": "off"
+			},
+			"style": {
+				"useImportType": {
+					"fix": "safe",
+					"level": "on",
+					"options": {
+						"style": "separatedType"
+					}
+				}
 			}
 		}
 	},

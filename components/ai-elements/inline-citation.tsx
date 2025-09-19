@@ -1,9 +1,11 @@
 "use client";
 
 import { Badge } from "@/components/ui/badge";
+import type {
+	CarouselApi,
+} from "@/components/ui/carousel";
 import {
 	Carousel,
-	type CarouselApi,
 	CarouselContent,
 	CarouselItem,
 } from "@/components/ui/carousel";
@@ -14,8 +16,10 @@ import {
 } from "@/components/ui/hover-card";
 import { cn } from "@/lib/utils";
 import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react";
+import type {
+	ComponentProps,
+} from "react";
 import {
-	type ComponentProps,
 	createContext,
 	useCallback,
 	useContext,
