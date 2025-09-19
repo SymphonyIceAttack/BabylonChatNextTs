@@ -1,6 +1,5 @@
 import { createDeepSeek } from "@ai-sdk/deepseek";
-import type { UIMessage } from "ai";
-import { streamText, convertToModelMessages, } from "ai";
+import { streamText, convertToModelMessages, type UIMessage } from "ai";
 
 const deepseek = createDeepSeek({
 	apiKey: process.env.DEEPSEEK_API_KEY ?? "",

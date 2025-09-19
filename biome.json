@@ -24,7 +24,7 @@
 					"fix": "safe",
 					"level": "on",
 					"options": {
-						"style": "separatedType"
+						"style": "auto"
 					}
 				}
 			}
