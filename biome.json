@@ -15,7 +15,9 @@
 	"linter": {
 		"enabled": true,
 		"rules": {
-			"recommended": true
+			"a11y": {
+				"useSemanticElements": "off"
+			}
 		}
 	},
 	"javascript": {
@@ -27,7 +29,12 @@
 		"enabled": true,
 		"actions": {
 			"source": {
-				"organizeImports": "on"
+				"organizeImports": {
+					"level": "on",
+					"options": {
+						"groups": ["@/components/ai-elements"]
+					}
+				}
 			}
 		}
 	}
