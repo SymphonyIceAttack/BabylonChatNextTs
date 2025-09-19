@@ -15,6 +15,7 @@ export async function POST(req: Request) {
 
 	const result = streamText({
 		model,
+		system: "You are a helpful assistant.",
 		messages: convertToModelMessages(messages),
 	});
 

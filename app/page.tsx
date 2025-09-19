@@ -1,47 +1,47 @@
 "use client";
 
-import { MessageContent, Message } from "@/components/ai-elements/message";
-import {
-	Conversation,
-	ConversationScrollButton,
-	ConversationContent,
-} from "@/components/ai-elements/conversation";
-import { Response } from "@/components/ai-elements/response";
-
 import { useChat } from "@ai-sdk/react";
+import { TextStreamChatTransport } from "ai";
+import { useState } from "react";
 
-const ResponseDemo = () => {
-	const { messages } = useChat();
+export default function Page() {
+	const { messages, sendMessage, status } = useChat({
+		transport: new TextStreamChatTransport({
+			api: "/api/chat",
+		}),
+	});
+	const [input, setInput] = useState("");
 
 	return (
-		<div className="max-w-4xl mx-auto p-6 relative size-full rounded-lg border h-[600px]">
-			<div className="flex flex-col h-full">
-				<Conversation>
-					<ConversationContent>
-						{messages.map((message) => (
-							<Message from={message.role} key={message.id}>
-								<MessageContent>
-									{message.parts.map((part, i) => {
-										switch (part.type) {
-											case "text": // we don't use any reasoning or tool calls in this example
-												return (
-													<Response key={`${message.id}-${i}`}>
-														{part.text}
-													</Response>
-												);
-											default:
-												return null;
-										}
-									})}
-								</MessageContent>
-							</Message>
-						))}
-					</ConversationContent>
-					<ConversationScrollButton />
-				</Conversation>
-			</div>
-		</div>
-	);
-};
+		<>
+			{messages.map((message) => (
+				<div key={message.id}>
+					{message.role === "user" ? "User: " : "AI: "}
+					{message.parts.map((part, index) =>
+						part.type === "text" ? <span key={index}>{part.text}</span> : null,
+					)}
+				</div>
+			))}
 
-export default ResponseDemo;
+			<form
+				onSubmit={(e) => {
+					e.preventDefault();
+					if (input.trim()) {
+						sendMessage({ text: input });
+						setInput("");
+					}
+				}}
+			>
+				<input
+					value={input}
+					onChange={(e) => setInput(e.target.value)}
+					disabled={status !== "ready"}
+					placeholder="Say something..."
+				/>
+				<button type="submit" disabled={status !== "ready"}>
+					Submit
+				</button>
+			</form>
+		</>
+	);
+}
