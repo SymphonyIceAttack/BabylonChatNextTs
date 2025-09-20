@@ -3,9 +3,10 @@
 import { useChat } from "@ai-sdk/react";
 import { TextStreamChatTransport } from "ai";
 import { useState } from "react";
+import BackgroundImage from "./components/BackgroundImage";
 
 export default function Page() {
-	const { messages, sendMessage, status } = useChat({
+	const { sendMessage, status } = useChat({
 		transport: new TextStreamChatTransport({
 			api: "/api/chat",
 		}),
@@ -13,15 +14,8 @@ export default function Page() {
 	const [input, setInput] = useState("");
 
 	return (
-		<>
-			{messages.map((message) => (
-				<div key={message.id}>
-					{message.role === "user" ? "User: " : "AI: "}
-					{message.parts.map((part, index) =>
-						part.type === "text" ? <span key={index}>{part.text}</span> : null,
-					)}
-				</div>
-			))}
+		<div className={"w-full h-[100vh] flex relative"}>
+			<BackgroundImage imageUrl="/崩坏学园2九霄.jpeg" />
 
 			<form
 				onSubmit={(e) => {
@@ -42,6 +36,6 @@ export default function Page() {
 					Submit
 				</button>
 			</form>
-		</>
+		</div>
 	);
 }
