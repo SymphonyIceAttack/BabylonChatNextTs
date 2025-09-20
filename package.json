@@ -4,8 +4,9 @@
 	"private": true,
 	"scripts": {
 		"dev": "next dev --turbopack",
-		"build": "next build --turbopack",
-		"start": "next start"
+		"build": "biome check && next build --turbopack",
+		"start": "next start",
+		"check": "biome check"
 	},
 	"dependencies": {
 		"@ai-sdk/deepseek": "^1.0.18",
