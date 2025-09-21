@@ -15,7 +15,9 @@ export default function Page() {
 
 	return (
 		<div className={"w-full h-[100vh] flex relative"}>
-			<BackgroundImage imageUrl="/崩坏学园2九霄.jpeg" />
+			<BackgroundImage
+				imageUrl={`/api/proxy?url=${encodeURIComponent("https://api-1256168079.cos.ap-chengdu.myqcloud.com/images/awaken/1238.png")}`}
+			/>
 
 			<form
 				onSubmit={(e) => {
