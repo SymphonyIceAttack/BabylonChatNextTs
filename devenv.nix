@@ -22,12 +22,6 @@
   };
 
   # https://devenv.sh/git-hooks/
-  # git-hooks.hooks.biome = {
-  #   enable = true;
-  #   settings = {
-  #     binPath = "./node_modules/.bin/biome";
-  #   };
-  # };
 
   # See full reference at https://devenv.sh/reference/options/
 }
