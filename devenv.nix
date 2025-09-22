@@ -11,6 +11,8 @@
   # https://devenv.sh/packages/
   packages = [
     pkgs.git
+    pkgs.nodejs_24
+    pkgs.pnpm
   ];
 
   # https://devenv.sh/tasks/
