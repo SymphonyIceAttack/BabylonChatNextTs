@@ -16,14 +16,12 @@
 		"enabled": true,
 		"rules": {
 			"recommended": true,
-			 "correctness": {
-        "noUnknownFunction": "error"
-      },
 			"a11y": {
 				"useSemanticElements": "off"
 			},
 			"suspicious": {
-				"noArrayIndexKey": "off"
+				"noArrayIndexKey": "off",
+        "noUnknownAtRules": "off"
 			},
 			"style": {
 				"useImportType": {
