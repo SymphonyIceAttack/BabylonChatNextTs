@@ -1,5 +1,6 @@
 "use client";
 import NextImage from "next/image";
+
 interface Props {
 	imageUrl: string;
 }
